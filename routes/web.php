@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ProdutosController;
+//use App\Models\Produto;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//Route::get('/', function () {
+//    return view('products', ['produtos' => Produto::all()]);
+//});
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('products', [ProdutosController::class, 'index']);
 });
+
