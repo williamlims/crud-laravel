@@ -12,7 +12,8 @@ class ProdutosController extends Controller
     //}
 
     public function index(){
-        return view('products', ['produtos' => Produto::all()]);
+        $produtos = Produto::all();
+        return view('products', compact('produtos'));
     }
 
     public function store(Request $request){
@@ -20,7 +21,8 @@ class ProdutosController extends Controller
     }
 
     public function show($id){
-        return Produto::findOrFail($id);
+        $produto = Produto::findOrFail($id);
+        return view('product', compact('produto'));
     }
 
     public function update(Request $request, $id){
