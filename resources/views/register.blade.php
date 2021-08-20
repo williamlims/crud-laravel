@@ -4,9 +4,8 @@
 
 @section('conteudo')
 
-    <form class="row g-3" action="{{ url("/produtos/$produto->id") }}" method="POST">
+    <form class="row g-3" action="{{ url("/produtos") }}" method="POST">
       @csrf
-      @method('PUT')
       <div class="col-md-12">
         <label for="nome" class="form-label">Nome</label>
         <input type="text" class="form-control" id="nome" value="{{ $produto->nome }}">
