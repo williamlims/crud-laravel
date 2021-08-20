@@ -23,7 +23,7 @@
         <input type="text" class="form-control" name="preco" id="preco">
       </div>
       <div class="col-12">
-        <button type="submit" class="btn btn-primary">Atualizar</button>
+        <button type="submit" class="btn btn-primary">Cadastrar</button>
       </div>
     </form>
 

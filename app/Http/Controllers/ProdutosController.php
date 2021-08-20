@@ -7,14 +7,16 @@ use App\Models\Produto;
 
 class ProdutosController extends Controller
 {
+    private $totalPage = 3;
+
     public function index(){
-        $produtos = Produto::all();
+        $produtos = Produto::paginate($this->totalPage);
         return view('products', compact('produtos'));
     }
 
     public function store(Request $request){
         Produto::create($request->all());
-        $produtos = Produto::all();
+        $produtos = Produto::paginate($this->totalPage);
         return view('products', compact('produtos'));        
     }
 
