@@ -13,9 +13,9 @@ class ProdutosController extends Controller
     }
 
     public function store(Request $request){
-        if(Produto::create($request->all())){
-            return redirect('products');
-        }
+        Produto::create($request->all());
+        $produtos = Produto::all();
+        return view('products', compact('produtos'));        
     }
 
     public function show($id){
@@ -26,11 +26,14 @@ class ProdutosController extends Controller
     public function update(Request $request, $id){
         $model = Produto::findOrFail($id);
         $model->update($request->all());
-        return view("products/$id");
+        $produtos = Produto::all();
+        return view('products', compact('produtos'));
     }
 
     public function destroy($id){
         $model = Produto::findOrFail($id);
-        $model->delete();   
+        $model->delete(); 
+        $produtos = Produto::all();
+        return view('products', compact('produtos'));  
     }
 }
