@@ -4,8 +4,8 @@
 
 @section('conteudo') 
   <div class="container-fluid">
-    <div class="col-12">
-      <div class="row">
+    <div class="row">
+      <div class="col-12">
         <table class="table table-dark table-striped table-hover">
           <thead>
             <tr>
@@ -33,9 +33,13 @@
             </tr>
             @endforeach
           </tbody>
-        </table><br>
-      </div>
-      <div class="row align-items-center">{!! ($produtos->links()) !!}</div>
+        </table>
+      </div>      
+    </div>
+    <div class="row fixed-bottom">
+      <div class="col-12 d-flex justify-content-center">
+        {{ ($produtos->onEachSide(5)->links()) }}  
+      </div>      
     </div>
   </div>
 @endsection
