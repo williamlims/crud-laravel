@@ -1,10 +1,10 @@
 @extends('layout')
 
-@section('title', 'Editar Produto')
+@section('title', 'Novo Produto')
 
 @section('conteudo')
-
-    <form class="row g-3" action="{{ url('produtos') }}" method="POST">
+  <div class="container-fluid">
+    <form class="row" action="{{ url('/produtos') }}" method="POST">
       @csrf
       <div class="col-md-12">
         <label for="nome" class="form-label">Nome</label>
@@ -26,5 +26,5 @@
         <button type="submit" class="btn btn-primary">Cadastrar</button>
       </div>
     </form>
-
+  </div>
 @endsection

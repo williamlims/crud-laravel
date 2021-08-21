@@ -3,7 +3,7 @@
 @section('title', 'Editar Produto')
 
 @section('conteudo')
-
+  <div class="container-fluid">
     <form class="row g-3" action="{{ url("/produtos/$produto->id") }}" method="POST">
       @csrf
       @method('PUT')
@@ -55,5 +55,5 @@
         </div>
       </div>
     </form>
-
+  </div>
 @endsection
